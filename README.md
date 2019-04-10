@@ -1,6 +1,6 @@
 # Webpack-React
 
-A starter kit for [React.js]() and [Webpack]() project, based on Create React App. Some Create React App features like Typescript, PWA support, their custom dev server, etc are not included.
+A starter kit for [React.js](https://reactjs.org/) and [Webpack](https://webpack.js.org/) project, based on Create React App. Some Create React App features like Typescript, PWA support, their custom dev server, etc are not included.
 
 ## Features
 
