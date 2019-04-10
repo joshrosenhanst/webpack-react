@@ -15,9 +15,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     pathinfo: devMode,
-    filename: devMode ? 'dist/js/bundle.js' : 'dist/js/[name].[contenthash:8].js',
-    chunkFilename: devMode ? 'dist/js/[name].chunk.js' : 'dist/js/[name].[contenthash:8].chunk.js',
-    publicPath: '/'
+    path: path.resolve(__dirname, 'dist'),
+    filename: devMode ? 'js/bundle.js' : 'js/[name].[contenthash:8].js'
   },
   optimization: {
     minimize: !devMode,
@@ -55,12 +54,7 @@ module.exports = {
           } : false)
         }
       })
-    ],
-    splitChunks: {
-      chunks: 'all',
-      name: false,
-    },
-    runtimeChunk: true
+    ]
   },
   module: {
     strictExportPresence: true,
@@ -104,7 +98,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'dist/assets/img/[name].[hash:8].[ext]'
+              name: 'assets/img/[name].[hash:8].[ext]'
             },
           },
         ]
@@ -114,15 +108,15 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
-      { from: path.resolve(__dirname, 'src/public'), to: 'dist/assets' }
+      { from: path.resolve(__dirname, 'src/public'), to: 'assets' }
     ]),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
     devMode && new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'dist/css/[name].[contenthash:8].css',
-      chunkFilename: 'dist/css/[name].[contenthash:8].chunk.css'
+      filename: 'css/[name].[contenthash:8].css',
+      chunkFilename: 'css/[name].[contenthash:8].chunk.css'
     })
   ]
 };
