@@ -5,7 +5,7 @@ class App extends Component {
   render(){
     return (
       <footer>
-        <img src={dog} alt="Transparent Dog footer image"/>
+        <img id="dog_footer" src={dog} alt="Transparent Dog footer"/>
       </footer>
     );
   }
