@@ -1,7 +1,7 @@
 {
   "name": "webpack-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "A starter kit for React.js and Webpack project, based on Create React App.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=development webpack --progress --hide-modules"
