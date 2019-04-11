@@ -5,6 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=development webpack --progress --hide-modules",
+    "start": "NODE_ENV=development webpack-dev-server",
     "production": "NODE_ENV=production webpack --progress --hide-modules"
   },
   "author": "Joshua RosenHanst",
@@ -33,6 +34,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
     "terser-webpack-plugin": "^1.2.3",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",

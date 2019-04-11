@@ -17,6 +17,11 @@ module.exports = {
     pathinfo: devMode,
     path: path.resolve(__dirname, 'dist'),
     filename: devMode ? 'js/bundle.js' : 'js/[name].[contenthash:8].js'
+  }, 
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
+    hot: true,
+    open: true
   },
   optimization: {
     minimize: !devMode,
@@ -82,17 +87,12 @@ module.exports = {
       {
         test: /\.(sass|scss)$/,
         use: [
-          {
+          (devMode ? 'style-loader' : {
             loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: devMode,
-              modules: true,
-              sourceMap: devMode
-            }
-          },
+          }),
           'css-loader',
           'sass-loader'
-        ],
+        ].filter(Boolean),
       },
       // step 4: handle image files via file-loader
       {
@@ -117,7 +117,7 @@ module.exports = {
       template: 'src/index.html'
     }),
     devMode && new webpack.HotModuleReplacementPlugin(),
-    new MiniCssExtractPlugin({
+    !devMode && new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].chunk.css'
     })
