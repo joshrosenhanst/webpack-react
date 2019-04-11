@@ -79,6 +79,7 @@ module.exports = {
         loader: 'babel-loader'
       },
       // step 3: process Sass via sass-loader
+      // If we are in production, build a css file otherwise inject a <style> tag
       {
         test: /\.(sass|scss)$/,
         use: [
@@ -87,7 +88,7 @@ module.exports = {
           }),
           'css-loader',
           'sass-loader'
-        ].filter(Boolean),
+        ],
       },
       // step 4: handle image files via file-loader
       {
