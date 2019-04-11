@@ -78,7 +78,18 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
-      // step 3: process Sass via sass-loader
+      // step 3: process regular CSS via css-loader
+      // If we are in production, build a css file otherwise inject a <style> tag
+      {
+        test: /\.css$/,
+        use: [
+          (devMode ? 'style-loader' : {
+            loader: MiniCssExtractPlugin.loader,
+          }),
+          'css-loader'
+        ],
+      },
+      // step 4: process Sass via sass-loader
       // If we are in production, build a css file otherwise inject a <style> tag
       {
         test: /\.(sass|scss)$/,
@@ -90,7 +101,7 @@ module.exports = {
           'sass-loader'
         ],
       },
-      // step 4: handle image files via file-loader
+      // step 5: handle image files via file-loader
       {
         test: /\.(svg|png|jpg|gif)$/,
         use: [
