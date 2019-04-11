@@ -46,17 +46,12 @@ module.exports = {
             ascii_only: true
           },
           parallel: true,
-          cache: true,
-          sourceMap: devMode
+          cache: true
         }
       }),
       new OptimizeCSSAssetsPlugin({
         cssProcessorOptions: {
-          parser: safePostCssParser,
-          map: (devMode ? {
-            inline: false,
-            annotation: true
-          } : false)
+          parser: safePostCssParser
         }
       })
     ]
