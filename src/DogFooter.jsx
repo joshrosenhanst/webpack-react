@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import dog from './assets/img/dog.png';
 
-class App extends Component {
+class DogFooter extends Component {
   render(){
     return (
       <footer>
@@ -11,4 +11,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default DogFooter;

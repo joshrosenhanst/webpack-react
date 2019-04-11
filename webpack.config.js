@@ -56,6 +56,9 @@ module.exports = {
       })
     ]
   },
+  resolve: {
+    extensions: ['.js','.jsx']
+  },
   module: {
     strictExportPresence: true,
     rules: [
