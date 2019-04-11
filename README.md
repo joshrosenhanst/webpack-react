@@ -4,7 +4,7 @@ A starter kit for [React.js](https://reactjs.org/) and [Webpack](https://webpack
 
 ## Features
 
-- ES2015+ support via [babel 7](https://babeljs.io/)
+- ES2015+ and JSX support via [babel 7](https://babeljs.io/)
 - Sass support via [sass-loader](https://github.com/webpack-contrib/sass-loader)
 - Linting via [eslint-loader](https://github.com/webpack-contrib/eslint-loader) and React Eslint config.
 - Image support via [file-loader](https://github.com/webpack-contrib/file-loader)
@@ -19,3 +19,5 @@ A starter kit for [React.js](https://reactjs.org/) and [Webpack](https://webpack
 
 ## Build Scripts
 - `npm run build` - Build development bundle in the `dist` directory. Assets are placed in the `dist/assets/` directory.
+- `npm run start` - Run Webpack Dev Server which automatically reloads on CSS/JS changes.
+- `npm run production` - Build production bundle with minified code.
