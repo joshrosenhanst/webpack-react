@@ -5,6 +5,7 @@ A starter kit for [React.js](https://reactjs.org/) and [Webpack](https://webpack
 ## Features
 
 - ES2015+ and JSX support via [babel 7](https://babeljs.io/)
+- [Public Class Fields Syntax support](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties)
 - Sass support via [sass-loader](https://github.com/webpack-contrib/sass-loader)
 - Linting via [eslint-loader](https://github.com/webpack-contrib/eslint-loader) and React Eslint config.
 - Image support via [file-loader](https://github.com/webpack-contrib/file-loader)
