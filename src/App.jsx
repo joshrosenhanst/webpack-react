@@ -18,11 +18,11 @@ class App extends Component {
     return (
       <>
       <main id="site-main">
-        <h1>Hello World</h1>
         <DogSlider 
           position={this.state.position} 
           onSliderChange={this.handleSliderChange}
         />
+        <h1>Hello World</h1>
       </main>
       <DogFooter position={this.state.position} />
       </>
